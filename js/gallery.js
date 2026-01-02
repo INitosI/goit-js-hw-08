@@ -86,7 +86,7 @@ const galleryContainer = document.querySelector('.gallery');
 const galleryItemsMarkup = createGalleryItems(images);
 galleryContainer.insertAdjacentHTML('beforeend', galleryItemsMarkup);
 galleryContainer.addEventListener('click', event => {
-	if (event.target.closest('.gallery-link')) {
+	if (event.target.tagName === 'IMG' && event.target.closest('.gallery-link')) {
 		event.preventDefault();
 		const source = event.target.dataset.source;
 		console.log(source);
